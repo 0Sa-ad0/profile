@@ -4,145 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
-    <style>
-        /* Reset */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: "Times New Roman", Times, serif;
-            scroll-behavior: smooth;
-        }
-
-        /* General Layout */
-        body.dark-mode {
-            background-color: #222;
-            color: #f9f9f9;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Sections */
-        section {
-            width: 100%;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        h1, h2 {
-            color: #fff;
-        }
-
-        p {
-            color: #ddd;
-        }
-
-        /* Profile Picture */
-        .profile {
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .profile img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 2px solid #ddd;
-            object-fit: cover;
-        }
-
-        /* Introduction Alignment */
-        .home {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .home {
-                flex-direction: row;
-                text-align: left;
-                justify-content: center;
-            }
-
-            .intro {
-                max-width: 400px;
-            }
-        }
-
-        /* Footer */
-        footer {
-            width: 100%;
-            padding: 20px 0;
-            text-align: center;
-            background-color: #333;
-            border-top: 1px solid #444;
-        }
-
-        footer .icon {
-            margin: 0 10px;
-            color: #bbb;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer .icon:hover {
-            color: #fff;
-        }
-
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #333;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s;
-        }
-
-        .dark-mode-toggle:hover {
-            background: #444;
-        }
-
-        .dark-mode-toggle i {
-            color: #fff;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        /* CV Download Button */
-        .download-cv {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #444;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-
-        .download-cv:hover {
-            background-color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="dark-mode">
@@ -168,7 +30,6 @@
             <h2>My Work</h2>
             <p>A brief overview of your projects or accomplishments.</p>
         </section>
-      
         <section class="contact" id="contact">
             <h2>Contact Me</h2>
             <p>Email: yourname@example.com</p>
@@ -179,19 +40,6 @@
             <a href="https://t.me/yourtelegram" class="icon" target="_blank"><i class="fab fa-telegram"></i></a>
         </footer>
     </div>
-    <script>
-        const toggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        toggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const icon = toggle.querySelector('i');
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
