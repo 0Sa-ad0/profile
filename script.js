@@ -66,4 +66,3 @@ links.forEach((link) => {
     previewBox.style.display = "none";
   });
 });
-

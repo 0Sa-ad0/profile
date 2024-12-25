@@ -28,9 +28,22 @@
         <div class="intro">
           <h1>Hi, I'm SAAD</h1>
           <p>Data Analyst, Node.js Developer</p>
-          <a href="cv.pdf" download="cv_CV.pdf" class="download-cv"
-            >Download CV</a
+          <a
+            href="https://www.canva.com/design/DAGZd8bnyfg/1t8P1ZyOJBuuj73HnN_87w/view"
+            class="preview-link"
+            target="_blank"
+            data-preview="Check out my CV"
           >
+            View CV
+          </a>
+          <!-- <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+              src="https://www.canva.com/design/DAGZd8bnyfg/1t8P1ZyOJBuuj73HnN_87w/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+            </iframe>
+          </div> -->
+          <!-- <a href="cv.pdf" download="cv_CV.pdf" class="download-cv"
+            >Download CV</a
+          > -->
         </div>
       </section>
 
@@ -480,19 +493,71 @@
 
       <!-- Footer -->
       <footer>
-        <a href="mailto:pro.saaad@gmail.com" class="icon"
-          ><i class="fas fa-envelope"></i
-        ></a>
+        <a href="mailto:pro.saaad@gmail.com" class="icon">
+          <i class="fas fa-envelope"></i>
+        </a>
         <a
           href="https://www.linkedin.com/in/saadsaadsaad/"
           class="icon"
           target="_blank"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a href="https://t.me/pytash" class="icon" target="_blank"
-          ><i class="fab fa-telegram"></i
-        ></a>
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://t.me/pytash" class="icon" target="_blank">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <div id="date-time">
+          <p>
+            <strong>Current (UTC+6) Time:</strong>
+            <span id="current-time"></span>
+          </p>
+          <p><strong>UTC-10 Time:</strong> <span id="utc10-time"></span></p>
+        </div>
       </footer>
+      <script>
+        // Function to format time with AM/PM
+        function formatTimeWithAMPM(date) {
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          const seconds = date.getSeconds();
+          const ampm = hours >= 12 ? "PM" : "AM";
+
+          const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+          const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+          const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+          const formattedDate = date.toLocaleString("en-GB", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          });
+
+          return `${formattedDate}, ${formattedHours}:${formattedMinutes}:${formattedSeconds} ${ampm}`;
+        }
+
+        function updateDateTime() {
+          // Get the current date and time in UTC
+          const currentDate = new Date();
+
+          // Get the time for UTC+6 and UTC-10
+          const utc10Date = new Date(
+            currentDate.toLocaleString("en-US", {
+              timeZone: "Pacific/Honolulu",
+            })
+          );
+
+          // Set the time in the footer with AM/PM format
+          document.getElementById("current-time").textContent =
+            formatTimeWithAMPM(currentDate);
+          document.getElementById("utc10-time").textContent =
+            formatTimeWithAMPM(utc10Date);
+        }
+
+        // Update the date and time immediately and then every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // Updates every second
+      </script>
     </div>
     <script src="script.js"></script>
   </body>
