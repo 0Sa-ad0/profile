@@ -1,109 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAAD</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="dark-mode">
     <div class="container">
-        <!-- Home Section -->
-        <section class="home" id="home">
-            <div class="profile">
-                <img src="profile.jpg" alt="Profile Picture">
+      <!-- Home Section -->
+      <section class="home" id="home">
+        <div class="profile">
+          <img src="profile1.jpg" alt="Profile Picture" id="profileImage" />
+        </div>
+
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modalImage" />
+          <!-- <div class="caption">View Picture</div> -->
+        </div>
+
+        <div class="intro">
+          <h1>Hi, I'm SAAD</h1>
+          <p>Data Analyst, Node.js Developer</p>
+          <a href="cv.pdf" download="cv_CV.pdf" class="download-cv"
+            >Download CV</a
+          >
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about" id="about">
+        <h2>About Me</h2>
+        <p class="content">
+          I am a BSc Computer Science student with a solid background in
+          <b>Data Analysis, Deep Learning, </b>and<b> Node.js development</b>,
+          driven by a passion for research opportunities. I have experience
+          working on projects involving cutting-edge web development frameworks
+          and technologies. One project featured NextJS integrated with
+          PostgreSQL, Tailwind UI, and React, creating a robust front-end and
+          database solution. Another centered on backend development with
+          NestJS, leveraging PostgreSQL for effective data handling. I studied
+          Data Science for my major. Also, I am conducting an academic thesis
+          focused on image segmentation.
+        </p>
+      </section>
+
+      <section class="projects">
+        <h2>Projects</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Timeline</th>
+              <th>Topic</th>
+              <th>Details</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>August - September 2024</td>
+              <td>Data Analysis</td>
+              <td>
+                <ul class="projects-list">
+                  <li>
+                    Analyzed the Diabetes dataset with 768 entries and 9 medical
+                    features such as Glucose, BMI, and Age, with the target
+                    variable Outcome indicating diabetes diagnosis.
+                  </li>
+                  <li>
+                    Handled missing values by filling them with zeros and
+                    ensured data consistency for model training.
+                  </li>
+                  <li>
+                    No significant feature engineering was performed; focused on
+                    utilizing the raw features for model building.
+                  </li>
+                  <li>
+                    Applied Naive Bayes algorithm for classification, predicting
+                    whether a patient has diabetes based on medical metrics.
+                  </li>
+                  <li>
+                    Achieved an accuracy of 78%, with a confusion matrix showing
+                    true positives, true negatives, false positives, and false
+                    negatives for model performance assessment.
+                  </li>
+                </ul>
+              </td>
+              <td class="centered">
+                <a
+                  href="https://github.com/0Sa-ad0/Data-mining"
+                  class="preview-link"
+                  target="_blank"
+                  data-preview="GitHub repository for Data Mining. It contains Naive Bayes Classifier."
+                >
+                  GitHub
+                </a>
+              </td>
+
+              <!-- Link Preview Popup -->
+              <div id="link-preview" class="link-preview">
+                <p id="preview-description"></p>
+              </div>
+            </tr>
+            <tr>
+              <td>April - May 2024</td>
+              <td>NextJS</td>
+              <td>
+                <ul class="projects-list">
+                  <li>AXIOS for making HTTP requests (API calls in NestJS).</li>
+                  <li>
+                    React core principles including Props, States, and Hooks.
+                  </li>
+                  <li>
+                    Next.js features such as routing, rendering, and libraries.
+                  </li>
+                  <li>
+                    Custom form validation using Vanilla JavaScript (without
+                    relying on HTML validation).
+                  </li>
+                  <li>Tailwind UI for styling.</li>
+                  <li>Authentication implementation.</li>
+                </ul>
+              </td>
+              <td class="centered">
+                <a
+                  href="https://github.com/0Sa-ad0/advanced-web-tech/tree/main/NextJS"
+                  class="preview-link"
+                  target="_blank"
+                  data-preview="GitHub repository for Advanced Web Technologies. This section focuses on Next.js projects and their applications."
+                >
+                  GitHub
+                </a>
+              </td>
+
+              <!-- Link Preview Popup -->
+              <div id="link-preview" class="link-preview">
+                <p id="preview-description"></p>
+              </div>
+            </tr>
+            <tr>
+              <td>February - March 2024</td>
+              <td>NestJS</td>
+              <td>
+                <style></style>
+                <ul class="projects-list">
+                  <li>
+                    15 APIs with comprehensive Controller and Service layers.
+                  </li>
+                  <li>Pipes for data transformation and validation.</li>
+                  <li>File upload functionality.</li>
+                  <li>
+                    Database relationships, including One-to-One and One-to-Many
+                    associations.
+                  </li>
+                  <li>
+                    JWT authentication alongside Bcrypt for password hashing and
+                    session management.
+                  </li>
+                  <li>Robust exception handling mechanisms.</li>
+                  <li>
+                    Email functionality using the Mailer module with SMTP
+                    integration.
+                  </li>
+                </ul>
+              </td>
+              <td class="centered">
+                <a
+                  href="https://github.com/0Sa-ad0/advanced-web-tech/tree/main/NestJS"
+                  class="preview-link"
+                  target="_blank"
+                  data-preview="GitHub repository for Advanced Web Technologies. This section focuses on NestJS, a powerful Node.js framework for building scalable applications."
+                >
+                  GitHub
+                </a>
+              </td>
+
+              <!-- Link Preview Popup -->
+              <div id="link-preview" class="link-preview">
+                <p id="preview-description"></p>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Certifications Section -->
+      <section class="certifications" id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+          <li>
+            <strong>Event:</strong>
+            IEEE Student Professional Awareness Venture
+            <a
+              href="https://www.aiub.edu/ieee-student-professional-awareness-venture-spave-60"
+              target="_blank"
+              class="preview-link"
+              data-preview="IEEE Student Professional Awareness Venture (SPAVe) 6.0 is a professional event organized by IEEE AIUB Student Branch."
+              style="text-decoration: none; /*color: inherit*/"
+            >
+              (SPAVe) 6.0
+            </a>
+            <div id="link-preview"></div>
+          </li>
+          <li><strong>Date:</strong> March 16th, 2023</li>
+          <li><strong>Role:</strong> Participant</li>
+          <li>
+            <strong>Certified by:</strong>
+            <a
+              href="https://ieeeaiubsb.com/"
+              target="_blank"
+              class="preview-link"
+              data-preview="IEEE AIUB is a student branch of the IEEE organization at American International University-Bangladesh."
+              style="text-decoration: none"
+            >
+              IEEE AIUB
+            </a>
+            Student Branch
+            <div id="link-preview"></div>
+          </li>
+        </ul>
+      </section>
+      <!-- Education Section -->
+      <section class="education" id="education">
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <strong>Degree:</strong> B.Sc. in Computer Science and Engineering
+            (CSE)
+          </li>
+          <li>
+            <strong>Institution:</strong>
+            American International University-Bangladesh
+            <a
+              href="https://www.aiub.edu/"
+              target="_blank"
+              style="text-decoration: none"
+              class="preview-link"
+              data-preview="AIUB is a private university in Bangladesh."
+            >
+              (AIUB)
+            </a>
+          </li>
+          <li><strong>Enrollment:</strong> January 2022 - Present</li>
+          <li><strong>Expected Graduation:</strong> April 2025</li>
+        </ul>
+      </section>
+
+      <section class="languages" id="languages">
+        <h2>Languages</h2>
+        <div class="language-container">
+          <!-- Bangla -->
+          <div class="language-item">
+            <strong style="font-family: 'Times New Roman', Times, serif"
+              >Bangla</strong
+            >
+            <div class="circle">
+              <div
+                class="circle-inner"
+                style="background: conic-gradient(#4caf50 100%, #ddd 0%)"
+              ></div>
+              <span>100%</span>
             </div>
-            <div class="intro">
-                <h1>Hi, I'm [Your Name]</h1>
-                <p>A short description about who you are, your profession, or passion.</p>
-                <a href="cv.pdf" download="YourName_CV.pdf" class="download-cv">Download CV</a>
+          </div>
+
+          <!-- English -->
+          <div class="language-item">
+            <strong style="font-family: 'Times New Roman', Times, serif"
+              >English</strong
+            >
+            <div class="circle">
+              <div
+                class="circle-inner"
+                style="background: conic-gradient(#4caf50 80%, #ddd 0%)"
+              ></div>
+              <span>80%</span>
             </div>
-        </section>
+          </div>
+          <!-- Français -->
+          <div class="language-item">
+            <a
+              href="https://www.afdhaka.org/"
+              target="_blank"
+              class="preview-link"
+              data-preview="Alliance Française de Dhaka is a French language and cultural center in Dhaka."
+              style="text-decoration: none; /*color: inherit*/"
+            >
+              <strong style="font-family: 'Times New Roman', Times, serif"
+                >Française</strong
+              >
+            </a>
+            <div id="link-preview"></div>
+            <div class="circle">
+              <div class="circle-inner" id="francais-progress"></div>
+              <span id="francais-label">Calculating...</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- About Section -->
-        <section class="about" id="about">
-            <h2>About Me</h2>
-            <p>A concise bio about your background, interests, and goals.</p>
-        </section>
+      <!-- Work Experience Section -->
+      <!-- <section class="work-experience" id="work-experience">
+        <h2>Work Experience</h2>
+        <ul>
+          <li>Job Title 1 - Company Name (Year-Year)</li>
+          <li>Job Title 2 - Company Name (Year-Year)</li>
+          <li>Job Title 3 - Company Name (Year-Year)</li>
+        </ul>
+      </section> -->
 
-        <!-- Work Section -->
-        <section class="work" id="work">
-            <h2>My Work</h2>
-            <p>A brief overview of your projects or accomplishments.</p>
-        </section>
+      <!-- Core Skills Section -->
+      <section class="core-skills" id="core-skills">
+        <style>
+          .core-skills table {
+            width: 100%;
+            border-collapse: collapse;
+          }
 
-        <!-- Certifications Section -->
-        <section class="certifications" id="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Certification Name 1 - Issuing Organization</li>
-                <li>Certification Name 2 - Issuing Organization</li>
-                <li>Certification Name 3 - Issuing Organization</li>
-            </ul>
-        </section>
+          .core-skills th,
+          .core-skills td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+          }
 
-        <!-- Education Section -->
-        <section class="education" id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>Degree 1 - University Name (Year)</li>
-                <li>Degree 2 - University Name (Year)</li>
-                <li>Degree 3 - University Name (Year)</li>
-            </ul>
-        </section>
+          .core-skills th {
+            background-color: #f2f2f2;
+          }
 
-        <!-- Languages Section -->
-        <section class="languages" id="languages">
-            <h2>Languages</h2>
-            <p>English, Spanish, French, [Add more languages]</p>
-        </section>
+          .core-skills ul {
+            margin: 0;
+            padding-left: 20px;
+          }
 
-        <!-- Work Experience Section -->
-        <section class="work-experience" id="work-experience">
-            <h2>Work Experience</h2>
-            <ul>
-                <li>Job Title 1 - Company Name (Year-Year)</li>
-                <li>Job Title 2 - Company Name (Year-Year)</li>
-                <li>Job Title 3 - Company Name (Year-Year)</li>
-            </ul>
-        </section>
+          .core-skills ul li {
+            margin-bottom: 5px;
+          }
+        </style>
+        <h2>Core Skills</h2>
+        <table>
+          <tr>
+            <td>Primary Programming Languages</td>
+            <td>Python, Javascript</td>
+          </tr>
+          <tr>
+            <td>Other Programming Languages</td>
+            <td>
+              C++ (OpenGL), Java, C#, R, HTML, CSS, PHP, Tailwind CSS, React,
+              Assembly
+            </td>
+          </tr>
+          <tr>
+            <td>Database Management</td>
+            <td>PostgreSQL, PHP Data Objects (PDO)</td>
+          </tr>
+          <tr>
+            <td colspan="2">Postman API</td>
+          </tr>
+          <tr>
+            <td colspan="2">Data Analysis</td>
+          </tr>
+          <tr>
+            <td>Data Structures</td>
+            <td>
+              <ul>
+                <li>Stack</li>
+                <li>Queue</li>
+                <li>Linked List</li>
+                <li>
+                  Sorting Algorithms: Selection Sort, Bubble Sort, Counting Sort
+                </li>
+                <li>Searching Algorithms: Linear Search, Binary Search</li>
+                <li>Binary Search Tree</li>
+                <li>Uniform Cost Search</li>
+                <li>Iterative Deepening Depth-First Search</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Algorithms</td>
+            <td>
+              <ul>
+                <li>Insertion Sort</li>
+                <li>Merge Sort</li>
+                <li>Quick Sort</li>
+                <li>Counting Sort</li>
+                <li>Divide-and-Conquer</li>
+                <li>Knapsack Problem</li>
+                <li>Greedy Algorithm</li>
+                <li>A*</li>
+                <li>Hill Climbing</li>
+                <li>Genetic Algorithms</li>
+                <li>Breadth-First Search</li>
+                <li>Depth-First Search</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Operating Systems</td>
+            <td>Ubuntu - Shell Script</td>
+          </tr>
+          <tr>
+            <td>Networking</td>
+            <td>Cisco Packet Tracer</td>
+          </tr>
+        </table>
+      </section>
 
-        <!-- Core Skills Section -->
-        <section class="core-skills" id="core-skills">
-            <h2>Core Skills</h2>
-            <ul>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-                <li>Skill 3</li>
-                <li>Skill 4</li>
-            </ul>
-        </section>
+      <!-- Soft Skills Section -->
+      <section class="soft-skills" id="soft-skills">
+        <style>
+          .soft-skills table {
+            width: 20%;
+            margin: 0 auto; /* This centers the table horizontally */
+            border-collapse: collapse;
+            text-align: center; /* This centers the text inside table cells */
+          }
 
-        <!-- Soft Skills Section -->
-        <section class="soft-skills" id="soft-skills">
-            <h2>Soft Skills</h2>
-            <ul>
-                <li>Communication</li>
-                <li>Teamwork</li>
-                <li>Problem-Solving</li>
-                <li>Adaptability</li>
-            </ul>
-        </section>
+          .soft-skills th,
+          .soft-skills td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid;
+          }
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: yourname@example.com</p>
-        </section>
+          .soft-skills ul {
+            margin: 0;
+            padding-left: 20px;
+          }
 
-        <!-- Footer -->
-        <footer>
-            <a href="mailto:yourname@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/yourlinkedin" class="icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://t.me/yourtelegram" class="icon" target="_blank"><i class="fab fa-telegram"></i></a>
-        </footer>
+          .soft-skills ul li {
+            margin-bottom: 5px;
+          }
+        </style>
+
+        <h2>Soft Skills</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td>Communication</td>
+            </tr>
+            <tr>
+              <td>Teamwork</td>
+            </tr>
+            <tr>
+              <td>Adaptability</td>
+            </tr>
+            <tr>
+              <td>Leadership</td>
+            </tr>
+            <tr>
+              <td>Creativity</td>
+            </tr>
+            <tr>
+              <td>Time Management</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>
+          <a
+            href="mailto:pro.saaad@gmail.com"
+            class="icon"
+            style="text-decoration: none; color: inherit"
+          >
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <a href="mailto:pro.saaad@gmail.com" class="icon"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/saadsaadsaad/"
+          class="icon"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://t.me/pytash" class="icon" target="_blank"
+          ><i class="fab fa-telegram"></i
+        ></a>
+      </footer>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

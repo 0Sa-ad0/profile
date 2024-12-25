@@ -1,123 +1,300 @@
 /* Reset */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: "Times New Roman", Times, serif;
-    scroll-behavior: smooth;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  scroll-behavior: smooth;
+  line-height: 1.5; /* Improves readability */
+}
+
+.content {
+  max-width: 800px; /* Limits the width for better readability */
+  margin: auto; /* Centers the content */
+  text-align: justify; /* Justifies the text */
 }
 
 /* General Layout */
 body.dark-mode {
-    background-color: #222;
-    color: #f9f9f9;
+  background-color: #222;
+  color: #f9f9f9;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Sections */
 section {
-    width: 100%;
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 1px solid #444;
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #444;
 }
 
 section:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
-h1, h2 {
-    color: #fff;
+h1,
+h2 {
+  color: #fff;
 }
 
-p, ul, li {
-    color: #ddd;
+p,
+ul,
+li {
+  color: #ddd;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 ul li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 /* Profile Picture */
 .profile {
-    display: inline-block;
-    margin-bottom: 20px;
+  display: inline-block;
 }
 
+/* Profile Picture */
 .profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  top: 10px; /* Move the image lower */
+}
+
+.profile img:hover {
+  transform: scale(1.1);
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.caption {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Introduction Alignment */
 .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
 }
 
 @media (min-width: 768px) {
-    .home {
-        flex-direction: row;
-        text-align: left;
-        justify-content: center;
-    }
+  .home {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+  }
 
-    .intro {
-        max-width: 400px;
-    }
+  .intro {
+    max-width: 400px;
+  }
 }
 
 /* Footer */
 footer {
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    background-color: #333;
-    border-top: 1px solid #444;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #333;
+  border-top: 1px solid #444;
 }
 
 footer .icon {
-    margin: 0 10px;
-    color: #bbb;
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s;
+  margin: 0 10px;
+  color: #bbb;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 footer .icon:hover {
-    color: #fff;
+  color: #fff;
 }
 
 /* CV Download Button */
 .download-cv {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #444;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
 .download-cv:hover {
-    background-color: #555;
+  background-color: #555;
+}
+
+/* General Styles */
+.languages {
+  text-align: center;
+}
+
+.language-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.language-item {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Circular Progress Bar Styles */
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.circle-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.circle span {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Style for the preview link */
+.preview-link {
+  text-decoration: none;
+  color: #007bff;
+  position: relative;
+}
+
+.preview-link:hover {
+  text-decoration: underline;
+}
+
+/* Style for the preview box */
+#link-preview {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 300px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+.projects table {
+  width: 80%;
+  margin: 0 auto; /* Centers the table */
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.projects th,
+.projects td {
+  padding: 15px;
+  border: 1px solid;
+  font-size: 16px;
+}
+
+.projects th {
+  /* background-color: ; */
+  /* color: white; */
+  text-align: center;
+}
+
+/* .projects td {
+  /* background-color: #f9f9f9; 
+} */
+
+.projects td ul {
+  padding-left: 20px;
+}
+
+.projects td ul li {
+  margin-bottom: 5px;
+}
+
+/* .projects tr:nth-child(even) td {
+  background-color: #f1f1f1;
+} */
+
+/* .projects tr:hover td {
+  background-color: #e0e0e0;
+} */
+
+.projects-list {
+  list-style-type: disc; /* Ensures bullet points are displayed */
+  padding-left: 20px; /* Adds space for bullets */
+  margin-top: 10px; /* Optional: Adds margin for spacing from other elements */
 }
